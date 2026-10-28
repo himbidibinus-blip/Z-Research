@@ -1,0 +1,126 @@
+BRIDGE GET /api/v05/branding/logo 404 {"detail":"Custom logo has not been uploaded"}
+BRIDGE GET /api/auth/status 200 {"configured":false,"authenticated":false,"provider_connected":false,"model":null,"provider":null,"provider_label":"Open
+BRIDGE GET /api/auth/status 200 {"configured":false,"authenticated":false,"provider_connected":false,"model":null,"provider":null,"provider_label":"Open
+START: AKUN LOKAL
+Selamat datang di Z-Research
+
+Masuk untuk melanjutkan penelitian. Tidak perlu akun cloud atau layanan eksternal.
+
+Buat akun pemilik
+Nama pengguna
+Kata sandi (minimal 10 karakter)
+Buat akun & mulai
+
+Akun dan data disimpan di perangkat serve
+BRIDGE GET /api/auth/status 200 {"configured":false,"authenticated":false,"provider_connected":false,"model":null,"provider":null,"provider_label":"Open
+BRIDGE POST /api/auth/setup 200 {"ok":true,"username":"user094"}
+BRIDGE GET /api/auth/status 200 {"configured":true,"authenticated":true,"provider_connected":false,"model":"gpt-5-mini","provider":"openai","provider_la
+BRIDGE GET /api/datasets 200 []
+BRIDGE GET /api/v09/projects 200 []
+BRIDGE GET /api/v05/references 200 []
+HOME: Z-RESEARCH · MODE MUDAH
+Selamat datang 👋
+
+Riset lebih mudah. Ikuti panduan 5 langkah ini—tidak perlu membuka semua menu sekaligus.
+
+Langkah 1 dari 5
+LANGKAH BERIKUTNYA
+Mulai dari data penelitian
+
+Unggah CSV atau Excel. Jika Anda belum punya proyek, Z-Research bisa membuat proyek sekaligus.
+
+Unggah d
+TOAST Selamat datang di Z-Research
+ERRORS []
+DATA: LANGKAH 1 DARI 5
+Mulai dari data Anda
+
+Unggah CSV atau Excel. Z-Research akan mengenali jumlah baris dan kolom tanpa perlu pengaturan teknis.
+
+Kembali ke panduan
++ Proyek Baru
+1
+Data
+2
+Model
+3
+Analisis
+4
+Referensi
+5
+Menulis
+① Unggah data penelitian
+
+Gunakan file .csv at
+BRIDGE POST /api/datasets 200 {"id":"eb79f2a8428e4f9b92382ebf6770ea68","name":"consumer_survey_demo.csv","rows":120,"columns":["social_media_1","socia
+BRIDGE GET /api/datasets 200 [{"id":"eb79f2a8428e4f9b92382ebf6770ea68","name":"consumer_survey_demo.csv","rows":120,"columns":["social_media_1","soci
+BRIDGE POST /api/v09/projects 200 {"id":"ccb326fc591f49ec9056e76a09d6d423","user_id":"2486403d118f4018a58e7cdf9efe76b5","name":"Riset Pelanggan Demo","dat
+BRIDGE GET /api/v09/projects 200 [{"id":"ccb326fc591f49ec9056e76a09d6d423","name":"Riset Pelanggan Demo","dataset_id":"eb79f2a8428e4f9b92382ebf6770ea68",
+BRIDGE GET /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423 200 {"id":"ccb326fc591f49ec9056e76a09d6d423","user_id":"2486403d118f4018a58e7cdf9efe76b5","name":"Riset Pelanggan Demo","dat
+BRIDGE GET /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423/constructs 200 {"groups":[{"key":"purchase intention","label":"purchase intention","indicators":["purchase_intention"]},{"key":"social 
+UPLOAD->MODEL: LANGKAH 2 DARI 5
+Susun Model Penelitian
+
+Pilih variabel X dan Y. Z-Research membantu membuat rancangan hubungan, namun Anda tetap perlu memeriksa kesesuaian teori.
+
+Lanjut ke analisis
+✓
+Data
+2
+Model
+3
+Analisis
+4
+Referensi
+5
+Menulis
+① Pilih variabel penelitian
+Grouping indicators by column prefix is a convenience, not a validity test. Confirm every construct and its theory before analysis.
+Variabel
+BRIDGE POST /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423/auto-model 200 {"model":{"nodes":[{"id":"v_1","label":"social media","type":"latent","measurement":"reflective","role":"independent","i
+BRIDGE GET /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423 200 {"id":"ccb326fc591f49ec9056e76a09d6d423","user_id":"2486403d118f4018a58e7cdf9efe76b5","name":"Riset Pelanggan Demo","dat
+BRIDGE GET /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423/constructs 200 {"groups":[{"key":"purchase intention","label":"purchase intention","indicators":["purchase_intention"]},{"key":"social 
+BRIDGE POST /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423/preview 200 {"fingerprint":"fdec80b5bbe4ec486fa46691a84889eb0d9ed6b0b9fc6a9801ac1e4894733747","n":120,"paths":{"social media -> trus
+AFTER MODEL: LANGKAH 2 DARI 5
+Susun Model Penelitian
+
+Pilih variabel X dan Y. Z-Research membantu membuat rancangan hubungan, namun Anda tetap perlu memeriksa kesesuaian teori.
+
+Lanjut ke analisis
+✓
+Data
+2
+Model
+3
+Analisis
+4
+Referensi
+5
+Menulis
+① Pilih variabel penelitian
+
+NOTICE: Model generated; inspect all hypotheses and measurement modes
+BRIDGE POST /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423/preview 200 {"fingerprint":"fdec80b5bbe4ec486fa46691a84889eb0d9ed6b0b9fc6a9801ac1e4894733747","n":120,"paths":{"social media -> trus
+BRIDGE GET /api/datasets/eb79f2a8428e4f9b92382ebf6770ea68 200 {"id":"eb79f2a8428e4f9b92382ebf6770ea68","name":"consumer_survey_demo.csv","rows":120,"columns":["social_media_1","socia
+STAGE AFTER MODEL: LANGKAH BERIKUTNYA
+Jalankan analisis
+
+Hitung hasil dari data asli. Jika data atau model berubah, analisis harus diulang.
+
+Jalankan SEM-PLS →
+BRIDGE GET /api/v05/branding/logo 404 {"detail":"Custom logo has not been uploaded"}
+BRIDGE GET /api/auth/status 200 {"configured":true,"authenticated":true,"provider_connected":false,"model":"gpt-5-mini","provider":"openai","provider_la
+BRIDGE GET /api/datasets 200 [{"id":"eb79f2a8428e4f9b92382ebf6770ea68","name":"consumer_survey_demo.csv","rows":120,"columns":["social_media_1","soci
+BRIDGE GET /api/v09/projects 200 [{"id":"ccb326fc591f49ec9056e76a09d6d423","name":"Riset Pelanggan Demo","dataset_id":"eb79f2a8428e4f9b92382ebf6770ea68",
+BRIDGE GET /api/v09/projects/ccb326fc591f49ec9056e76a09d6d423 200 {"id":"ccb326fc591f49ec9056e76a09d6d423","user_id":"2486403d118f4018a58e7cdf9efe76b5","name":"Riset Pelanggan Demo","dat
+BRIDGE GET /api/v05/references 200 []
+MOBILE: Z-RESEARCH · MODE MUDAH
+Selamat datang 👋
+
+Riset lebih mudah. Ikuti panduan 5 langkah ini—tidak perlu membuka semua menu sekaligus.
+
+Langkah 3 dari 5
+LANGKAH BERIKUTNYA
+Jalankan ana
+Mobile overflow: False
+JS ERRORS: []

@@ -1,0 +1,22 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const Citation=require('../app/static/citation09.js');
+const UI=fs.readFileSync('app/static/studio09.js','utf8');
+let checked=0;
+function test(name,fn){fn();checked++;}
+const sample=(authors)=>({id:'ref1',title:'Study',authors,year:2025,venue:'Journal'});
+test('uppercase AND APA two names',()=>assert.equal(Citation.citeAPA(sample('Smith, John AND Doe, Jane')),'(Smith & Doe, 2025)'));
+test('mixedcase AND APA',()=>assert.equal(Citation.citeAPA(sample('Smith, John AnD Doe, Jane')),'(Smith & Doe, 2025)'));
+test('lowercase and APA',()=>assert.equal(Citation.citeAPA(sample('Smith, John and Doe, Jane')),'(Smith & Doe, 2025)'));
+test('semicolon APA',()=>assert.equal(Citation.citeAPA(sample('Smith, John; Doe, Jane')),'(Smith & Doe, 2025)'));
+test('multiple authors et al',()=>assert.equal(Citation.citeAPA(sample('Smith, John AND Doe, Jane AND Brown, Mark')),'(Smith et al., 2025)'));
+test('organization',()=>assert.equal(Citation.citeAPA(sample('{World Health Organization}')),'(World Health Organization, 2025)'));
+test('family/given names',()=>assert.deepEqual(Citation.parseAuthors('Smith, John AND Doe, Jane').map(x=>x.family),['Smith','Doe']));
+test('first-appearance IEEE',()=>assert.equal(Citation.renderDocument('[@ref:ref2] [@ref:ref1] [@ref:ref2]','ieee',[sample('Smith, John'),{...sample('Doe, Jane'),id:'ref2'}]).text.startsWith('[1] [2] [1]'),true));
+test('APA TXT rendering',()=>assert.match(Citation.renderDocument('Cite [@ref:ref1].','apa',[sample('Smith, John AND Doe, Jane')]).text,/\(Smith & Doe, 2025\)/));
+test('APA bibliography from uppercase AND',()=>assert.match(Citation.renderDocument('[@ref:ref1]','apa',[sample('Smith, John AND Doe, Jane')]).bibliography,/Smith, J\., Doe, J\./));
+test('IEEE bibliography from uppercase AND',()=>assert.match(Citation.renderDocument('[@ref:ref1]','ieee',[sample('Smith, John AND Doe, Jane')]).bibliography,/\[1\] J\. Smith, J\. Doe/));
+test('UI has chapter manual citation review hint',()=>assert.match(UI,/Possible manually typed author-year citations/));
+test('UI TXT is rendered rather than raw tokens',()=>assert.match(UI,/download-chapter[\s\S]*?ZRCitation\.renderDocument/));
+console.log(`PASS ${checked} v0.9.3 JavaScript citation and audit UI checks`);

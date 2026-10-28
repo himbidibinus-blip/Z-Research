@@ -1,0 +1,72 @@
+[
+  {
+    "check": "Live server v0.9.2",
+    "pass": true,
+    "detail": "{'status': 'ok', 'version': '0.9.2', 'mode': 'local'}"
+  },
+  {
+    "check": "Desktop dataset + project workflow",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "Library shows two references",
+    "pass": true,
+    "detail": "2"
+  },
+  {
+    "check": "Cite+ inserts ID-linked token, not frozen IEEE number",
+    "pass": true,
+    "detail": "[@ref:30c6d9a2af31416095558f36240e5e40]"
+  },
+  {
+    "check": "IEEE preview numbers first citation [1]",
+    "pass": true,
+    "detail": "[1]\n\nReferences\n[1] J. Doe, \"Study Beta,\" , 2026. https://doi.org/10.1234/ui092.doe"
+  },
+  {
+    "check": "Multiple IEEE citations and bibliography synchronized",
+    "pass": true,
+    "detail": "[1]\n\nReferences\n[1] J. Doe, \"Study Beta,\" , 2026. https://doi.org/10.1234/ui092.doe\n[2] J. Smith, \"Study Alpha,\" , 2025. https://doi.org/10.1234/ui092.smith\n[2]"
+  },
+  {
+    "check": "IEEE reindexes after citation deletion",
+    "pass": true,
+    "detail": "[1]\n\nReferences\n[1] J. Doe, \"Study Beta,\" , 2026. https://doi.org/10.1234/ui092.doe\n"
+  },
+  {
+    "check": "IEEE version saved",
+    "pass": true,
+    "detail": "Chapter 2 version saved successfully"
+  },
+  {
+    "check": "Browser restore atomic text/style/references",
+    "pass": true,
+    "detail": "{'body': '[@ref:30c6d9a2af31416095558f36240e5e40]\\n\\n[@bibliography]\\n', 'style': 'ieee', 'checked': 1}"
+  },
+  {
+    "check": "Restored render has no ordinal drift",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "desktop no horizontal overflow",
+    "pass": true,
+    "detail": "{'width': 1440, 'scroll': 1440}"
+  },
+  {
+    "check": "desktop no JS errors",
+    "pass": true,
+    "detail": "[]"
+  },
+  {
+    "check": "mobile no horizontal overflow",
+    "pass": true,
+    "detail": "{'width': 390, 'scroll': 390}"
+  },
+  {
+    "check": "mobile no JS errors",
+    "pass": true,
+    "detail": "[]"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "release": "Z-Research v0.9.3 Data Consistency & Research Integrity",
+  "scope": "Linux developer QA with isolated fixtures, not independent re-audit or public production approval",
+  "input_qa_report": "ZResearch_v092_IndependentDeepQA_Report.md",
+  "findings_remediated": [
+    "ZR-QA-092-01",
+    "ZR-QA-092-02",
+    "ZR-QA-092-03",
+    "ZR-QA-092-04"
+  ],
+  "python": {
+    "shipped_v092": 65,
+    "independent_adversarial_v092": 7,
+    "new_v093": 12,
+    "total_passed": 84,
+    "failed": 0
+  },
+  "javascript": {
+    "old_qa091": 13,
+    "old_qa092": 20,
+    "new_qa093": 13,
+    "total_passed": 46
+  },
+  "ui": {
+    "simulated_chromium_api_bridge": true,
+    "viewports": [
+      1440,
+      390
+    ],
+    "page_errors": 0
+  },
+  "independent_new_qa_v093": false,
+  "native_mac_test": false,
+  "native_windows_test": false,
+  "claims": {
+    "bug_free": false,
+    "smartpls_parity": false,
+    "production_ready": false
+  },
+  "qa_status": "Known four v0.9.2 audit bugs fixed in tests; pending independent v0.9.3 audit"
+}

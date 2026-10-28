@@ -1,0 +1,18 @@
+[
+  {
+    "width": 1440,
+    "chapter_editor_visible": true,
+    "citation_preview": "Some work [1]\n\nReferences\n[1] J. Smith, \"Research on X,\" , 2025. https://doi.org/10.1111/test092",
+    "scroll_width": 1440,
+    "viewport_width": 1440,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "chapter_editor_visible": true,
+    "citation_preview": "Some work [1]\n\nReferences\n[1] J. Smith, \"Research on X,\" , 2025. https://doi.org/10.1111/test092",
+    "scroll_width": 390,
+    "viewport_width": 390,
+    "errors": []
+  }
+]

@@ -1,0 +1,22 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('fs');
+const path=require('path');
+const citation=require('../app/static/citation09.js');
+const staticJs=fs.readFileSync(path.join(__dirname,'../app/static/studio09.js'),'utf8');
+function ref(authors){return {id:'a',authors,year:2025,title:'Sample Article',venue:'Journal of Research',doi:'10.1234/abc'};}
+assert.equal(citation.cite(ref('Smith, John'),'apa'),'(Smith, 2025)');
+assert.equal(citation.cite(ref('Smith, John; Doe, Jane'),'apa'),'(Smith & Doe, 2025)');
+assert.equal(citation.cite(ref('Smith, John; Doe, Jane; Brown, Mark'),'apa'),'(Smith et al., 2025)');
+assert.equal(citation.cite(ref('John Smith, Jane Doe'),'apa'),'(Smith & Doe, 2025)');
+assert.equal(citation.cite(ref('{World Health Organization}'),'apa'),'(World Health Organization, 2025)');
+assert.equal(citation.cite(ref('de la Cruz, Maria'),'apa'),'(de la Cruz, 2025)');
+assert.equal(citation.cite({...ref('Smith, John'),year:null},'apa'),'(Smith, n.d.)');
+assert.equal(citation.cite(ref('Smith, John'),'ieee',['a','b']),'[1]');
+assert.equal(citation.cite({...ref('Doe, Jane'),id:'b'},'ieee',['a','b']),'[2]');
+assert.match(citation.bibliography(ref('Smith, John'),'ieee',['a']),/^\[1\] J\. Smith/);
+assert.match(citation.bibliography(ref('Smith, John'),'apa',['a']),/^Smith, J\. \(2025\)/);
+assert.equal((staticJs.match(/data-construct-indicators=/g)||[]).length,1);
+assert.equal((staticJs.match(/data-indicators=/g)||[]).length,0);
+assert.match(staticJs,/\$\$\('\[data-construct-indicators\]'\)/);
+console.log('ZR-QA-004,005,007: 13 citation/model binding checks passed');

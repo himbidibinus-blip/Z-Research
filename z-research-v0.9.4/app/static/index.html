@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Z-Research 0.9.4 — Simple Workspace</title><link rel="stylesheet" href="/static/studio09.css?v=0940"></head>
+<body>
+<div class="app-shell">
+ <aside class="sidebar">
+  <div class="branding"><div class="logo" id="logoMark">Z<span>✳</span><img hidden id="brandImage" alt="Z-Research logo"></div><div><strong>Z-Research</strong><small>RESEARCH WORKSPACE <i>v0.9.4</i></small></div></div>
+  <div class="navgroup"><p>MULAI DI SINI</p>
+   <button class="nav active" data-view="home"><span>◫</span> Beranda</button>
+   <button class="nav" data-view="data"><span>▤</span> Data &amp; Proyek</button>
+   <button class="nav" data-view="model"><span>◇</span> Model Penelitian</button>
+   <button class="nav" data-view="sem"><span>⌁</span> Analisis SEM-PLS</button>
+  </div>
+  <div class="navgroup"><p>REFERENSI &amp; PENULISAN</p>
+   <button class="nav" data-view="chapter1"><span>◉</span> Bab 1 · Pendahuluan</button>
+   <button class="nav" data-view="library"><span>▦</span> Referensi Ilmiah</button>
+   <button class="nav" data-view="chapter2"><span>▤</span> Bab 2 · Kajian Pustaka</button>
+   <button class="nav" data-view="chapter3"><span>✧</span> Bab 3 · Metodologi</button>
+   <button class="nav" data-view="chapter4"><span>▧</span> Bab 4 · Hasil</button>
+  </div>
+  <details class="side-advanced navgroup"><summary>⚙ Pengaturan &amp; fitur lanjutan</summary><p>PENGATURAN</p>
+   <button class="nav" data-view="audit"><span>✓</span> Audit &amp; Riwayat</button>
+   <button class="nav" data-view="settings"><span>⚙</span> AI &amp; Akun</button>
+   <a class="nav legacy" href="/legacy" target="_blank"><span>↗</span> Studio lama (lanjutan)</a>
+  </details>
+  <div class="sidebar-foot"><span class="online-dot"></span><div><strong>Server penelitian pribadi</strong><small>Data disimpan di perangkat server.</small></div></div>
+ </aside>
+ <div class="page-main">
+  <header class="topbar"><button id="mobileMenu" class="ghost mobile-menu" aria-label="Menu">☰</button><div class="crumb"><span>Z-RESEARCH</span> / <b id="pageLabel">Beranda</b></div><div class="top-actions"><select id="projectPicker" aria-label="Active research project"><option value="">Pilih proyek…</option></select><span class="pill" id="projectState">Belum ada proyek</span><button id="openSettings" class="iconbtn" title="Pengaturan AI">⚙</button></div></header>
+  <main id="viewRoot" aria-live="polite"></main>
+  <footer>Data &amp; referensi tetap dapat ditelusuri · SEM-PLS eksperimental · v0.9.4 · Mac / Windows</footer>
+ </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="modal"><div class="modal-head"><h3 id="modalTitle">Dialog</h3><button class="iconbtn" id="closeModal" aria-label="Close dialog">✕</button></div><div id="modalContent"></div></dialog>
+<script defer src="/static/citation09.js?v=0930"></script>
+<script defer src="/static/studio09.js?v=0940"></script>
+</body></html>

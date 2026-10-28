@@ -1,0 +1,43 @@
+{
+  "release": "0.9.4",
+  "type": "UI/UX simplification on top of 0.9.3 Data Consistency & Research Integrity",
+  "python": {
+    "passed": 91,
+    "failed": 0,
+    "scope": "84 legacy + 7 UI static/health regression tests"
+  },
+  "javascript": {
+    "passed": 46,
+    "failed": 0,
+    "scope": "citation/integrity checks (13+20+13)"
+  },
+  "browser": {
+    "platform": "Chromium via local in-process FastAPI bridge (not native localhost navigation)",
+    "desktop": 1440,
+    "mobile": 390,
+    "passed_flows": [
+      "login",
+      "dashboard/onboarding",
+      "CSV upload",
+      "automatic project creation",
+      "checkbox construct selection",
+      "generate model",
+      "recompute dashboard next step",
+      "all dataset variables modal",
+      "create additional project controls",
+      "mobile navigation",
+      "responsive no-horizontal-overflow"
+    ],
+    "uncaught_js_errors": 0
+  },
+  "launcher": {
+    "mac_bash_syntax": "pass",
+    "windows_native": "not tested"
+  },
+  "limitations": [
+    "Local QA in Linux; not tested on physical user Mac or Windows",
+    "not a new independent third-party audit of v0.9.4",
+    "multi-user simultaneous work and full security review not validated",
+    "SEM-PLS numerical parity and public production readiness remain unverified"
+  ]
+}

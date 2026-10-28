@@ -1,0 +1,101 @@
+/* Z-Research v0.5.4 - editorial writing workspace & interaction clean-up */
+:root{--zr-ink:#243352;--zr-accent:#6650cd;--zr-line:#e2e7f2;--zr-muted:#6c7b93}
+.maincol,.page,.panel,.zr-studio-grid,.zr-editor-panel,.zr-cite-rail{min-width:0}
+main{max-width:1760px;margin:0 auto;width:100%}
+.page:not(#page-overview) .pagehead{margin-bottom:20px}
+.pagehead h1{font-size:clamp(23px,2.4vw,29px);letter-spacing:-.6px;line-height:1.25}
+.pagehead p{max-width:760px;line-height:1.65}
+.panel{background:#fff;border-color:var(--zr-line);border-radius:16px;padding:clamp(16px,1.9vw,24px)}
+.panel h2{color:var(--zr-ink);letter-spacing:-.25px;line-height:1.35}
+.panel h3{color:var(--zr-ink)}
+.panel input:not([type=checkbox]):not([type=file]),.panel select,.panel textarea{max-width:100%;width:100%;box-sizing:border-box;border-radius:10px}
+.panel label{line-height:1.45}
+.page .buttonrow{gap:9px;flex-wrap:wrap;align-items:center}
+.page .btn{min-height:34px;line-height:1.3;white-space:normal}
+.page .notice-warn{font-size:12px;padding:12px 16px;line-height:1.5}
+/* Chapter context is collapsible visually by design: compact, aligned, and separated from writing */
+.zr-chapter-context{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:stretch;margin-bottom:20px}
+.zr-chapter-context>.panel{display:flex;flex-direction:column;gap:5px}
+.zr-chapter-context label{font-size:11px;font-weight:750;letter-spacing:.1px;color:#566782}
+.zr-chapter-context textarea{min-height:84px}
+.zr-chapter-context textarea[id$="Facts"]{min-height:120px}
+.zr-chapter-context textarea[id$="Instructions"]{min-height:80px}
+.zr-chapter-context .zr-reference-summary{display:none!important} /* moved to citation rail */
+/* Writing workspace. Document stays wide; selected references remain close to the manuscript */
+.zr-studio-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(295px,345px);gap:16px;align-items:start;margin-top:18px}
+.zr-editor-panel{padding:20px}
+.zr-editor-panel .panelhead{gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.zr-editor-panel .panelhead h2{font-size:17px}
+.zr-editor-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #e3e6f3;border-bottom:0;background:linear-gradient(90deg,#f6f5ff,#f9faff);border-radius:11px 11px 0 0;padding:10px 13px;margin-top:14px}
+.zr-workspace-pill{font-size:11px;font-weight:800;color:#6650cd;white-space:nowrap}
+.zr-workspace-tip{font-size:11px;color:#78839b;line-height:1.4;text-align:right}
+.panel textarea.zr-chapter-editor{font:14px/1.9 Georgia,'Times New Roman',serif;letter-spacing:.03px;min-height:530px;background:#fff;border:1px solid #e3e6f3;border-radius:0 0 11px 11px;padding:22px 26px;margin:0;resize:vertical;box-shadow:inset 0 1px 0 #fff}
+.panel textarea.zr-chapter-editor:focus{border-color:#8570e5;box-shadow:0 0 0 3px #6e5ede1b}
+.zr-editor-panel>.buttonrow{margin:13px 0 7px}
+.zr-cite-rail{position:sticky;top:18px;padding:18px;max-height:min(78vh,950px);display:flex;flex-direction:column;gap:8px}
+.zr-cite-rail h2{margin:0;font-size:16px}
+.zr-cite-rail p{margin:2px 0 6px;line-height:1.45}
+.zr-cite-rail input[type=text],.zr-cite-rail input:not([type]){min-height:40px;font-size:12px}
+.zr-citation-row{display:flex;gap:7px;flex-wrap:wrap}
+.zr-citation-row .btn{font-size:11px}
+.zr-citation-library{overflow:auto;min-height:115px;max-height:55vh;scrollbar-gutter:stable;padding-right:4px;flex:1}
+.zr-citation-item{display:flex;align-items:flex-start;gap:8px;border:1px solid #e8e9f4;border-radius:11px;padding:10px;margin:7px 0;background:#fcfcff;cursor:grab;transition:background .15s,border-color .15s}
+.zr-citation-item:hover{background:#f4f2ff;border-color:#d4cdf5}
+.zr-citation-include{margin:2px 0 0!important;flex:none;padding:0!important}
+.zr-citation-include input{accent-color:#6854d8;width:16px;height:16px;margin:0}
+.zr-citation-info{flex:1;min-width:0}
+.zr-citation-info b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11.4px;line-height:1.5;color:#273954}
+.zr-citation-info small{display:block;color:#6c7890;font-size:10.6px;margin-top:4px;line-height:1.45;overflow-wrap:anywhere}
+.zr-citation-item .zr-cite-button{flex:none;min-height:30px;font-size:11px;padding:7px 10px;white-space:nowrap}
+.zr-empty-ref{font-size:12px;padding:20px 10px;text-align:center}
+/* Reference library: button inline with item, duplicate state persistent */
+.zr-search-ref,.zr-library-ref{display:flex;align-items:center;gap:16px;justify-content:space-between;border:1px solid #e6e9f4;border-radius:11px;padding:12px 14px;margin-bottom:9px}
+.zr-ref-copy{min-width:0;flex:1;overflow-wrap:anywhere}
+.zr-search-ref .btn,.zr-library-ref .btn{flex:none}
+.zr-added,.zr-added:disabled{background:#eaf6ee!important;border-color:#bce2c9!important;color:#27764a!important;cursor:default!important;opacity:1!important}
+#refResults{max-height:490px;overflow:auto;scrollbar-gutter:stable;padding-right:5px}
+#refLibrary{max-height:540px;overflow:auto;scrollbar-gutter:stable;padding-right:5px}
+#page-references>.two{align-items:start}
+#page-references>.two>.panel{min-width:0}
+/* Chapter 1: compact news browsing, no endless page scrolling */
+#page-intro #phenomenaIdeas{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:9px;max-height:350px;overflow-y:auto}
+#page-intro .zr-theme{margin:0;min-width:0}
+.zr-news-fold{margin:13px 0 0;background:#fafbff;border:1px solid #e2e7f4;border-radius:13px;padding:0 14px 12px}
+.zr-news-fold summary{cursor:pointer;font-size:13px;font-weight:800;color:#41517a;padding:14px 0;list-style:revert}
+.zr-news-fold h3{font-size:12px;margin:6px 0 12px;color:#677894}
+#page-intro .zr-news-results{max-height:330px;overflow-y:auto;scrollbar-gutter:stable;padding:4px}
+#page-intro .zr-news-results .zr-ref-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:center;padding:9px 12px;gap:4px}
+#page-intro .zr-news-results .zr-ref-entry b,#page-intro .zr-news-results .zr-ref-entry small{grid-column:1}
+#page-intro .zr-news-results .zr-ref-entry .buttonrow{grid-column:2;grid-row:1/3;margin:0}
+#page-intro .zr-news-results .zr-ref-entry .btn{font-size:10.5px;padding:6px 9px}
+#newsLibrary{max-height:280px;overflow:auto;border:1px solid #e7e9f2;border-radius:11px;padding:9px}
+#newsLibrary .zr-ref-entry{margin:6px 0}
+/* UI hygiene for all menus */
+.page .two{gap:16px}
+.zr-brand-upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.zr-brand-upload input[type=file]{max-width:330px}
+.brand .mark{overflow:hidden;position:relative;flex:none}
+.brand .mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;border-radius:inherit}
+.brand .mark img[hidden]{display:none!important}
+.zr-branding-panel{margin-top:14px}
+@media(max-width:1190px){.zr-studio-grid{grid-template-columns:minmax(0,1fr) 285px}.zr-editor-toolbar{align-items:flex-start;flex-direction:column}.zr-workspace-tip{text-align:left}}
+@media(max-width:920px){.zr-studio-grid{grid-template-columns:minmax(0,1fr)}.zr-cite-rail{position:static;max-height:none}.zr-citation-library{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;max-height:310px}.zr-chapter-context{grid-template-columns:1fr}}
+@media(max-width:650px){.page .panel{padding:15px}.zr-editor-panel{padding:15px}.panel textarea.zr-chapter-editor{padding:16px;font-size:13px;min-height:420px}.zr-news-fold{padding:0 10px 10px}#page-intro .zr-news-results .zr-ref-entry{display:block}#page-intro .zr-news-results .zr-ref-entry .buttonrow{margin-top:6px}.zr-search-ref,.zr-library-ref{align-items:flex-start;flex-direction:column}.zr-citation-library{grid-template-columns:1fr}}
+
+/* Progressive disclosure keeps the manuscript above the fold while allowing full controls. */
+.zr-context-fold{margin:0 0 17px;border:1px solid #e2e7f2;background:#fff;border-radius:14px;overflow:hidden}
+.zr-context-fold>summary{cursor:pointer;display:flex;align-items:center;gap:16px;padding:14px 18px;list-style:none;min-height:52px}
+.zr-context-fold>summary::-webkit-details-marker{display:none}
+.zr-context-fold>summary strong{font-size:13px;color:#344467}
+.zr-context-fold>summary span{font-size:11px;color:#8090a7;flex:1}
+.zr-context-fold>summary b{color:#6f5bd4;font-size:11px}
+.zr-context-fold[open]>summary{border-bottom:1px solid #e6e9f2;background:#fafbff}
+.zr-context-fold[open]>summary b{color:#6a7892}
+.zr-context-fold .zr-chapter-context{padding:14px;margin:0}
+.zr-context-fold .zr-chapter-context>.panel{box-shadow:none;border-color:#e9ebf4;background:#fcfcff}
+.zr-literature-fold .panel{margin:14px}
+.zr-biblio-btn{width:100%;font-size:11px!important;text-align:center}
+@media(max-width:650px){.zr-context-fold>summary{flex-wrap:wrap;gap:6px}.zr-context-fold>summary span{flex-basis:100%;order:3}.zr-context-fold .zr-chapter-context{padding:9px}}
+
+.zr-news-evidence-fold>summary{background:linear-gradient(90deg,#fafaff,#fff)}
+.zr-news-evidence-fold>.panel{margin:12px;border:0;box-shadow:none;background:transparent}
